@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XBPix Lab — Technology Research Lab</title>
+<meta name="description" content="XBPix Lab — независимая технологическая лаборатория. Исследуем идеи, проверяем технологии и создаём прототипы.">
+<style>
+:root{
+  --bg:#070b10;
+  --panel:#0d141c;
+  --panel2:#101a24;
+  --text:#edf7ff;
+  --muted:#8fa5b8;
+  --cyan:#38d9ff;
+  --line:rgba(56,217,255,.18);
+  --glow:0 0 35px rgba(56,217,255,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:
+  radial-gradient(circle at 70% 10%,rgba(56,217,255,.09),transparent 30%),
+  radial-gradient(circle at 10% 50%,rgba(56,217,255,.05),transparent 25%),
+  var(--bg);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{
+  height:72px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--line);
+}
+.logo{font-weight:800;letter-spacing:.12em;font-size:20px}
+.logo span{color:var(--cyan)}
+.navlinks{display:flex;gap:28px;color:var(--muted);font-size:14px}
+.navlinks a:hover{color:var(--cyan)}
+.hero{min-height:650px;display:grid;align-items:center;padding:80px 0}
+.kicker{color:var(--cyan);font-size:13px;letter-spacing:.22em;text-transform:uppercase}
+h1{font-size:clamp(48px,8vw,92px);line-height:.95;margin:18px 0 25px;letter-spacing:-.055em}
+h1 span{color:var(--cyan)}
+.hero p{max-width:650px;color:var(--muted);font-size:20px;line-height:1.6}
+.cta{
+  display:inline-flex;margin-top:28px;padding:14px 22px;border:1px solid var(--cyan);
+  border-radius:9px;color:var(--cyan);font-weight:700;box-shadow:var(--glow);
+}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+section{padding:80px 0}
+.section-title{font-size:36px;margin:0 0 12px}
+.section-sub{color:var(--muted);max-width:650px;line-height:1.6}
+.card{
+  background:linear-gradient(145deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);border-radius:16px;padding:25px;
+  min-height:170px;box-shadow:var(--glow)
+}
+.card .num{color:var(--cyan);font-size:12px;letter-spacing:.15em}
+.card h3{margin:18px 0 8px;font-size:20px}
+.card p{margin:0;color:var(--muted);line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:35px}
+.step{padding:25px;border-top:1px solid var(--line);position:relative}
+.step strong{color:var(--cyan);font-size:12px;letter-spacing:.15em}
+.step h3{margin:14px 0 8px}
+.step p{color:var(--muted);line-height:1.55}
+.project{
+  border:1px solid var(--line);border-radius:20px;padding:35px;
+  background:linear-gradient(135deg,rgba(56,217,255,.08),rgba(13,20,28,.95));
+}
+.status{display:inline-block;border:1px solid rgba(56,217,255,.4);color:var(--cyan);padding:7px 10px;border-radius:999px;font-size:11px;letter-spacing:.12em}
+.project h3{font-size:42px;margin:20px 0 8px}
+.project p{color:var(--muted);line-height:1.65;max-width:700px}
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.price b{font-size:28px}
+.price small{display:block;color:var(--muted);margin-top:8px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between}
+@media(max-width:800px){
+  .navlinks{display:none}
+  .grid,.steps,.prices{grid-template-columns:1fr 1fr}
+  .hero{min-height:580px;padding:55px 0}
+}
+@media(max-width:520px){
+  .grid,.steps,.prices{grid-template-columns:1fr}
+  section{padding:55px 0}
+  h1{font-size:54px}
+  .hero p{font-size:17px}
+  footer{display:block;line-height:2}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<nav>
+  <a class="logo" href="#">XB<span>PIX</span></a>
+  <div class="navlinks">
+    <a href="#lab">Lab</a>
+    <a href="#process">Process</a>
+    <a href="#research">Research</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="kicker">Technology Research Lab · 2026</div>
+    <h1>WE DON'T<br><span>PROMISE.</span><br>WE TEST.</h1>
+    <p>XBPix Lab исследует идеи, проверяет технологии и превращает рабочие гипотезы в прототипы и продукты.</p>
+    <a class="cta" href="#contact">Проверить идею →</a>
+  </div>
+</header>
+
+<section id="lab">
+  <div class="kicker">What we do</div>
+  <h2 class="section-title">Лаборатория, а не обещания.</h2>
+  <p class="section-sub">У вас есть задача, которую хочется решить с помощью современных технологий? Мы сначала проверяем, возможно ли это, и только потом предлагаем строить.</p>
+  <div class="grid" style="margin-top:35px">
+    <div class="card"><div class="num">01 / RESEARCH</div><h3>Исследование</h3><p>Ищем существующие технологии и реальные варианты решения задачи.</p></div>
+    <div class="card"><div class="num">02 / AI</div><h3>AI & Agents</h3><p>Тестируем модели, агентов, локальные и облачные AI-инструменты.</p></div>
+    <div class="card"><div class="num">03 / AUTOMATION</div><h3>Автоматизация</h3><p>Ищем операции, которые можно сделать быстрее, дешевле и надёжнее.</p></div>
+    <div class="card"><div class="num">04 / PROTOTYPE</div><h3>Прототипы</h3><p>Создаём минимальную рабочую версию, чтобы проверить идею на практике.</p></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="kicker">Method</div>
+  <h2 class="section-title">Как работает XBPIX</h2>
+  <div class="steps">
+    <div class="step"><strong>01 / IDEA</strong><h3>Гипотеза</h3><p>Вы приносите проблему, вопрос или идею.</p></div>
+    <div class="step"><strong>02 / RESEARCH</strong><h3>Исследование</h3><p>Изучаем технологии и выбираем путь проверки.</p></div>
+    <div class="step"><strong>03 / EXPERIMENT</strong><h3>Эксперимент</h3><p>Делаем тест или небольшой Proof of Concept.</p></div>
+    <div class="step"><strong>04 / RESULT</strong><h3>Результат</h3><p>Работает, не работает, работает частично или требует дальнейшего исследования.</p></div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="kicker">Current research</div>
+  <div class="project">
+    <span class="status">ACTIVE RESEARCH</span>
+    <h3>ATIG</h3>
+    <p><b>Artificial Trusted Intelligence Guardian.</b><br>
+    Долгосрочное исследование персонального ИИ: память, агенты, инструменты и принцип проверяемого результата.</p>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">Services</div>
+  <h2 class="section-title">С чего можно начать</h2>
+  <div class="prices" style="margin-top:30px">
+    <div class="card price"><div class="num">RESEARCH</div><h3>Исследование</h3><b>49 000 ₸</b><small>Проверяем технологическую возможность.</small></div>
+    <div class="card price"><div class="num">PoC</div><h3>Proof of Concept</h3><b>от 99 000 ₸</b><small>Доказываем работоспособность решения.</small></div>
+    <div class="card price"><div class="num">PROTOTYPE</div><h3>Прототип</h3><b>от 250 000 ₸</b><small>Создаём минимальную рабочую систему.</small></div>
+    <div class="card price"><div class="num">BUILD</div><h3>Внедрение</h3><b>от 500 000 ₸</b><small>Развиваем проверенное решение.</small></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="project">
+    <div class="kicker">Start an experiment</div>
+    <h2 class="section-title">Есть идея?</h2>
+    <p class="section-sub">Расскажите, какую проблему вы хотите решить. Не обещаем, что получится. Обещаем проверить.</p>
+    <a class="cta" href="mailto:lab@xbpix.com">lab@xbpix.com →</a>
+  </div>
+</section>
+
+<footer>
+  <div>XBPIX LAB · 2026</div>
+  <div>We don't promise. We test.</div>
+</footer>
+</div>
+</body>
+</html>
