@@ -138,6 +138,12 @@ section{padding:80px 0}
   padding:25px;
   min-height:170px;
   box-shadow:var(--glow);
+  transition:transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  border-color:var(--cyan);
 }
 
 .card .num{
@@ -239,7 +245,12 @@ section{padding:80px 0}
   gap:14px;
 }
 
-.price b{font-size:28px}
+.price b{
+  font-size:28px;
+  display:block;
+  margin-top:10px;
+  color:var(--cyan);
+}
 
 .price small{
   display:block;
@@ -265,7 +276,7 @@ section{padding:80px 0}
   gap: 6px;
 }
 
-.lab-form input, .lab-form textarea {
+.lab-form input, .lab-form textarea, .lab-form select {
   background: var(--panel2);
   border: 1px solid var(--line);
   border-radius: 9px;
@@ -277,7 +288,12 @@ section{padding:80px 0}
   transition: .2s ease;
 }
 
-.lab-form input:focus, .lab-form textarea:focus {
+.lab-form select option {
+  background: var(--panel2);
+  color: var(--text);
+}
+
+.lab-form input:focus, .lab-form textarea:focus, .lab-form select:focus {
   border-color: var(--cyan);
   box-shadow: var(--glow);
 }
@@ -331,6 +347,7 @@ footer{
     <a href="#lab">Lab</a>
     <a href="#process">Process</a>
     <a href="#research">Research</a>
+    <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -438,37 +455,40 @@ footer{
   </div>
 </section>
 
-<section>
+<section id="services">
   <div class="kicker">Services</div>
   <h2 class="section-title">С чего можно начать</h2>
+  <p class="section-sub">
+    Понятная стоимость без раздутых бюджетов. Сначала проверяем гипотезу — затем масштабируем.
+  </p>
 
   <div class="prices" style="margin-top:30px">
     <div class="card price">
-      <div class="num">RESEARCH</div>
+      <div class="num">01 / RESEARCH</div>
       <h3>Исследование</h3>
       <b>49 000 ₸</b>
-      <small>Проверяем технологическую возможность.</small>
+      <small>Технический аудит и отчет о возможности реализации задачи.</small>
     </div>
 
     <div class="card price">
-      <div class="num">PoC</div>
+      <div class="num">02 / POC</div>
       <h3>Proof of Concept</h3>
       <b>от 99 000 ₸</b>
-      <small>Проверяем работоспособность решения.</small>
+      <small>Минимальный технический тест. Проверка ключевой AI-гипотезы.</small>
     </div>
 
     <div class="card price">
-      <div class="num">PROTOTYPE</div>
+      <div class="num">03 / PROTOTYPE</div>
       <h3>Прототип</h3>
       <b>от 250 000 ₸</b>
-      <small>Создаём минимальную рабочую систему.</small>
+      <small>Рабочий MVP (интерфейс + логика + AI) для демонстрации и тестов.</small>
     </div>
 
     <div class="card price">
-      <div class="num">BUILD</div>
+      <div class="num">04 / BUILD</div>
       <h3>Внедрение</h3>
       <b>от 500 000 ₸</b>
-      <small>Развиваем проверенное решение.</small>
+      <small>Полноценная интеграция решения в ваши бизнес-процессы.</small>
     </div>
   </div>
 </section>
@@ -487,6 +507,16 @@ footer{
 
     <!-- Форма «Приёмная XBPix Lab» -->
     <form id="xbpix-lab-form" class="lab-form">
+      <label>Формат или тариф:
+        <select id="service-type">
+          <option value="Не выбрано / Консультация">Ещё не определился (Нужна консультация)</option>
+          <option value="Исследование (49 000 ₸)">Research / Исследование (49 000 ₸)</option>
+          <option value="Proof of Concept (от 99 000 ₸)">Proof of Concept (от 99 000 ₸)</option>
+          <option value="Прототип (от 250 000 ₸)">Prototype / Прототип (от 250 000 ₸)</option>
+          <option value="Внедрение (от 500 000 ₸)">Build / Внедрение (от 500 000 ₸)</option>
+        </select>
+      </label>
+
       <label>Что вы хотите сделать или проверить?
         <textarea id="task" required rows="3" placeholder="Опишите суть задачи..."></textarea>
       </label>
@@ -521,11 +551,13 @@ document.getElementById('xbpix-lab-form').addEventListener('submit', async funct
   const statusEl = document.getElementById('form-status');
   const btn = document.getElementById('submit-btn');
 
+  const service = document.getElementById('service-type').value;
   const task = document.getElementById('task').value;
   const business = document.getElementById('business').value || 'Не указано';
   const contacts = document.getElementById('contacts').value;
 
   const text = `🧪 *Новая заявка в XBPix Lab!*\n\n` +
+               `🎯 *Тариф:* ${service}\n` +
                `📌 *Задача:* ${task}\n` +
                `🏢 *Бизнес:* ${business}\n` +
                `📞 *Контакты:* ${contacts}`;
